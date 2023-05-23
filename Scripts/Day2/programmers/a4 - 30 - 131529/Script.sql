@@ -1,0 +1,21 @@
+-- https://school.programmers.co.kr/learn/courses/30/lessons/131529
+
+USE programmers;
+CREATE TABLE c30_l131529 (
+	PRODUCT_ID	INTEGER	NOT NULL,
+	PRODUCT_CODE	VARCHAR(8)	NOT NULL UNIQUE,
+	PRICE	INTEGER	NOT NULL
+);
+
+INSERT INTO c30_l131529 VALUES
+(1, "A1000011", 10000),
+(2, "A1000045", 9000),
+(3, "C3000002", 22000),
+(4, "C3000006", 15000),
+(5, "C3000010", 30000),
+(6, "K1000023", 17000);
+
+SELECT * FROM c30_l131529;
+
+SELECT DISTINCT LEFT(product_code, 2) AS category, count(*) AS products FROM c30_l131529
+GROUP BY category ORDER BY category;

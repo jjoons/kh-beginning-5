@@ -2,7 +2,13 @@
 USE day5_2;
 
 -- 1
-
+SELECT
+    *
+FROM (
+    SELECT student_id, course_id, exam_score, grade FROM grades
+) g
+ORDER BY g.exam_score DESC
+;
 
 -- 2
 SELECT c.title "과목명",
